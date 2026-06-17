@@ -763,6 +763,10 @@ main {
   width: min(100% - 40px, 1420px);
 }
 
+.article-page.medium-article {
+  width: min(100% - 40px, 1080px);
+}
+
 .article-page article {
   padding: clamp(24px, 5vw, 48px);
   border: 1px solid var(--line);
