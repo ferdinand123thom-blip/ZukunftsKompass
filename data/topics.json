@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Geld & Finanzen",
+    "slug": "geld-finanzen",
+    "description": "Budget, Sparen, Steuern, Kredite und mehr.",
+    "status": "planned"
+  },
+  {
+    "title": "Wohnen",
+    "slug": "wohnen",
+    "description": "Wohnung finden, Verträge, Kosten und Nebenkosten.",
+    "status": "planned"
+  },
+  {
+    "title": "Ausbildung & Studium",
+    "slug": "ausbildung-studium",
+    "description": "Wahl, Finanzierung, BAföG, Nebenjob und mehr.",
+    "status": "planned"
+  },
+  {
+    "title": "Beruf & Arbeit",
+    "slug": "beruf-arbeit",
+    "description": "Arbeitsvertrag, Gehalt, Rechte und Pflichten.",
+    "status": "planned"
+  },
+  {
+    "title": "Versicherungen",
+    "slug": "versicherungen",
+    "description": "Welche Versicherungen sind wirklich wichtig?",
+    "status": "planned"
+  },
+  {
+    "title": "Verträge & Recht",
+    "slug": "vertraege-recht",
+    "description": "Verträge verstehen, Rechte kennen, Fallen vermeiden.",
+    "status": "planned"
+  }
+]
