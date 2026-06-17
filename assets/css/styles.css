@@ -759,6 +759,10 @@ main {
   padding: 54px 0 80px;
 }
 
+.article-page.wide-article {
+  width: min(100% - 40px, 1420px);
+}
+
 .article-page article {
   padding: clamp(24px, 5vw, 48px);
   border: 1px solid var(--line);
