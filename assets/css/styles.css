@@ -796,7 +796,6 @@ main {
   margin-top: 18px;
   font-size: 1.28rem;
   font-weight: 700;
-  max-width: 920px;
 }
 
 .guide-intro {
@@ -829,65 +828,12 @@ main {
 
 .guide-section h2 {
   margin-top: 0;
-  color: var(--teal);
-  font-size: 1.35rem;
-  line-height: 1.3;
 }
 
 .guide-section h3 {
   margin: 0 0 10px;
   color: var(--text);
   font-size: 1.12rem;
-}
-
-.pdf-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px 18px;
-  margin: 14px 0 22px;
-  padding-left: 20px;
-  color: #edf4ff;
-  list-style: disc;
-}
-
-.pdf-list li {
-  min-width: 0;
-  padding-left: 2px;
-  line-height: 1.55;
-}
-
-.pdf-list li::marker {
-  color: var(--teal);
-}
-
-.note-card,
-.story-card,
-.lesson-card {
-  margin: 16px 0;
-  padding: 14px 16px;
-  border-left: 4px solid var(--teal);
-  border-radius: 8px;
-  background: rgba(6, 24, 48, 0.42);
-}
-
-.note-card {
-  border-left-color: var(--teal);
-}
-
-.story-card {
-  border-left-color: var(--yellow);
-  background: rgba(6, 24, 48, 0.5);
-}
-
-.lesson-card {
-  border-left-color: #ff8b3d;
-  background: rgba(6, 24, 48, 0.5);
-  font-weight: 700;
-  color: var(--text);
-}
-
-.guide-section > p:first-of-type:not(.note-card):not(.story-card):not(.lesson-card) {
-  margin-top: 0;
 }
 
 .check-list {
@@ -1159,7 +1105,6 @@ main {
   .lesson-grid,
   .guide-intro,
   .check-list,
-  .pdf-list,
   .info-grid,
   .split-content {
     grid-template-columns: 1fr;
