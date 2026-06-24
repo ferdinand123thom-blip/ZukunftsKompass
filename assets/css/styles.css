@@ -319,6 +319,50 @@ main {
   stroke-width: 0;
 }
 
+/* "Coming soon"-Markierung für Funktionen, die noch entwickelt werden */
+.action-with-badge {
+  position: relative;
+  display: inline-flex;
+}
+
+.coming-soon-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--yellow), #ff9d2e);
+  color: #07203f;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.coming-soon-badge--float {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px 8px;
+  font-size: 0.5rem;
+  box-shadow: 0 8px 18px rgba(4, 18, 38, 0.45);
+  pointer-events: none;
+}
+
+.panel-kicker-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 0 10px;
+}
+
+.panel-kicker-row .panel-kicker {
+  margin: 0;
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 0.68fr) minmax(620px, 1.1fr);
