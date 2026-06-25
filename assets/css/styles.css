@@ -1301,3 +1301,420 @@ main {
     padding-inline: 18px;
   }
 }
+
+/* =============================================================================
+   Zukunfts-Check (Quiz) – quiz.html
+   Nutzt dieselben Farb-Variablen, Karten- und Button-Stile wie der Rest der
+   Seite. Mobile-first gedacht, große Touch-Flächen, klar erkennbar auch ohne
+   Farbe (Häkchen / Kreuz).
+   ============================================================================= */
+.quiz-page {
+  width: min(100% - 32px, 760px);
+  margin-inline: auto;
+  padding: 38px 0 70px;
+}
+
+.quiz-shell {
+  padding: clamp(22px, 5vw, 40px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, rgba(19, 48, 82, 0.94), rgba(8, 28, 54, 0.94));
+  box-shadow: var(--shadow);
+}
+
+.quiz-shell .eyebrow {
+  margin-bottom: 18px;
+}
+
+.quiz-shell h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  line-height: 1.05;
+}
+
+.quiz-intro {
+  max-width: 620px;
+  margin: 18px 0 28px;
+  color: #edf4ff;
+  font-size: 1.08rem;
+  line-height: 1.6;
+}
+
+/* dezenter Hinweis (Checklisten / Themen) */
+.quiz-hint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.quiz-hint--center {
+  justify-content: center;
+  margin-top: 26px;
+  text-align: center;
+}
+
+.quiz-hint a {
+  color: var(--teal);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* --- Fortschritt -------------------------------------------------------- */
+.quiz-fortschritt {
+  margin-bottom: 22px;
+}
+
+.quiz-fortschritt-text {
+  margin: 0 0 10px;
+  color: var(--teal);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.quiz-fortschritt-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(137, 183, 226, 0.18);
+  overflow: hidden;
+}
+
+.quiz-fortschritt-balken {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+  transition: width 0.35s ease;
+}
+
+/* --- Frage -------------------------------------------------------------- */
+.quiz-frage-text {
+  margin: 0 0 22px;
+  font-size: clamp(1.4rem, 3.4vw, 2rem);
+  line-height: 1.25;
+}
+
+.quiz-frage-text:focus-visible {
+  outline: none;
+}
+
+.quiz-antworten {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 4px;
+  padding: 0;
+  list-style: none;
+}
+
+.quiz-antwort {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-height: 60px;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  text-align: left;
+  background: rgba(6, 24, 48, 0.72);
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: border-color 0.18s ease, background 0.18s ease, transform 0.05s ease;
+}
+
+.quiz-antwort:hover:not(:disabled) {
+  border-color: rgba(39, 213, 199, 0.55);
+  background: rgba(12, 39, 75, 0.85);
+}
+
+.quiz-antwort:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+/* ausgewählt, aber noch nicht bestätigt */
+.quiz-antwort.is-selected {
+  border-color: var(--teal);
+  background: rgba(39, 213, 199, 0.16);
+  box-shadow: inset 0 0 0 1px rgba(39, 213, 199, 0.5);
+}
+
+.quiz-antwort.is-selected .quiz-antwort-icon {
+  border-color: var(--teal);
+  background: rgba(39, 213, 199, 0.3);
+}
+
+.quiz-antwort:disabled {
+  cursor: default;
+}
+
+.quiz-antwort.is-locked {
+  opacity: 0.92;
+}
+
+/* runder Marker links – wird nach dem Antworten zu ✓ / ✗ */
+.quiz-antwort-icon {
+  display: grid;
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 2px solid rgba(137, 183, 226, 0.45);
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.quiz-antwort-text {
+  min-width: 0;
+}
+
+/* richtig beantwortet */
+.quiz-antwort.is-correct {
+  border-color: var(--green);
+  background: rgba(34, 199, 169, 0.16);
+}
+
+.quiz-antwort.is-correct .quiz-antwort-icon {
+  border-color: var(--green);
+  color: #04152c;
+  background: var(--green);
+}
+
+.quiz-antwort.is-correct .quiz-antwort-icon::after {
+  content: "✓";
+}
+
+/* falsch gewählt */
+.quiz-antwort.is-wrong {
+  border-color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.15);
+}
+
+.quiz-antwort.is-wrong .quiz-antwort-icon {
+  border-color: #ff6b6b;
+  color: #fff;
+  background: #e0524f;
+}
+
+.quiz-antwort.is-wrong .quiz-antwort-icon::after {
+  content: "✗";
+}
+
+/* die korrekte Lösung hervorheben, wenn falsch geraten wurde */
+.quiz-antwort.is-solution {
+  box-shadow: 0 0 0 2px rgba(34, 199, 169, 0.4);
+}
+
+/* --- Feedback / Erklärung ---------------------------------------------- */
+.quiz-feedback {
+  margin: 18px 0 0;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-left-width: 4px;
+  border-radius: 8px;
+  background: rgba(6, 24, 48, 0.72);
+}
+
+.quiz-feedback.is-correct {
+  border-left-color: var(--green);
+}
+
+.quiz-feedback.is-wrong {
+  border-left-color: #ff6b6b;
+}
+
+.quiz-feedback-titel {
+  margin: 0 0 6px;
+  font-weight: 800;
+}
+
+.quiz-feedback.is-correct .quiz-feedback-titel {
+  color: var(--green);
+}
+
+.quiz-feedback.is-wrong .quiz-feedback-titel {
+  color: #ff9d9d;
+}
+
+.quiz-feedback-text {
+  margin: 0;
+  color: #edf4ff;
+  line-height: 1.55;
+}
+
+/* dezenter Themenlink direkt bei der Frage (nach dem Bestätigen) */
+.quiz-feedback-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+  color: var(--teal);
+  font-weight: 800;
+}
+
+.quiz-feedback-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Button-Reihe (Bestätigen / Weiter) */
+.quiz-frage-actions {
+  margin-top: 24px;
+}
+
+/* deaktivierter Bestätigen-Button: klar erkennbar nicht klickbar */
+.quiz-page .primary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+  box-shadow: none;
+  filter: grayscale(0.3);
+}
+
+/* --- Ergebnis ----------------------------------------------------------- */
+.quiz-ergebnis-punkte {
+  margin: 14px 0 6px;
+  font-size: clamp(2.4rem, 7vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--teal);
+}
+
+.quiz-ergebnis-punkte:focus-visible {
+  outline: none;
+}
+
+.quiz-ergebnis-feedback {
+  margin: 0 0 24px;
+  color: #edf4ff;
+  font-size: 1.12rem;
+  line-height: 1.6;
+}
+
+.quiz-links-titel {
+  margin: 0 0 14px;
+  font-weight: 700;
+}
+
+/* Ergebnis-Übersicht: alle Fragen mit ✓/✗, Lösung und Nachschlagen-Link */
+.quiz-review {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.quiz-review-item {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 14px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-left-width: 4px;
+  border-radius: 8px;
+  background: rgba(6, 24, 48, 0.72);
+}
+
+.quiz-review-item.is-correct {
+  border-left-color: var(--green);
+}
+
+.quiz-review-item.is-wrong {
+  border-left-color: #ff6b6b;
+}
+
+.quiz-review-icon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.quiz-review-item.is-correct .quiz-review-icon {
+  color: #04152c;
+  background: var(--green);
+}
+
+.quiz-review-item.is-wrong .quiz-review-icon {
+  color: #fff;
+  background: #e0524f;
+}
+
+.quiz-review-body {
+  min-width: 0;
+}
+
+.quiz-review-frage {
+  margin: 0 0 6px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.quiz-review-loesung {
+  margin: 0 0 8px;
+  color: #edf4ff;
+  line-height: 1.5;
+}
+
+.quiz-review-loesung strong {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.quiz-review-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--teal);
+  font-weight: 800;
+}
+
+.quiz-review-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.quiz-ergebnis-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 28px 0 0;
+}
+
+/* --- Tastatur-Fokus (sichtbar) ----------------------------------------- */
+.quiz-antwort:focus-visible,
+.quiz-page .primary-button:focus-visible,
+.quiz-page .secondary-button:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+}
+
+@media (max-width: 780px) {
+  .quiz-page {
+    width: min(100% - 28px, 720px);
+  }
+
+  .quiz-ergebnis-actions .primary-button,
+  .quiz-ergebnis-actions .secondary-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 460px) {
+  .quiz-page {
+    width: min(100% - 20px, 420px);
+  }
+}
