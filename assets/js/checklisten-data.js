@@ -36,6 +36,7 @@ const CHECKLISTEN = {
   "erste-eigene-wohnung": {
     titel: "Erste eigene Wohnung",
     intro: "Schritt für Schritt zur ersten eigenen Wohnung – damit du von der Budgetplanung bis zum Einzug nichts Wichtiges vergisst.",
+    icon: "haus", // Karten-Icon: "haus" oder "klemmbrett" (Standard, wenn weggelassen)
     pdf: "assets/downloads/checkliste-erste-eigene-wohnung.pdf",
     phasen: [
       {

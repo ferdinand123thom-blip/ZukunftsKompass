@@ -29,15 +29,25 @@
     renderSingle(content);
   }
 
-  /* --- kleines Klemmbrett-Icon für die Übersichtskarten ------------------- */
-  function clipboardIcon() {
-    return (
-      '<svg viewBox="0 0 24 24" aria-hidden="true">' +
-      '<rect x="5" y="4" width="14" height="17" rx="2"></rect>' +
-      '<path d="M9 4a3 3 0 0 1 6 0"></path>' +
-      '<path d="M9 11h6"></path><path d="M9 15h6"></path>' +
-      "</svg>"
-    );
+  /* --- Icons für die Übersichtskarten ------------------------------------ */
+  // Wähle das Icon pro Checkliste über das Feld "icon" in checklisten-data.js.
+  // Ohne Angabe wird das Klemmbrett-Icon verwendet.
+  function iconMarkup(name) {
+    const icons = {
+      klemmbrett:
+        '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+        '<rect x="5" y="4" width="14" height="17" rx="2"></rect>' +
+        '<path d="M9 4a3 3 0 0 1 6 0"></path>' +
+        '<path d="M9 11h6"></path><path d="M9 15h6"></path>' +
+        "</svg>",
+      haus:
+        '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+        '<path d="m3 11 9-8 9 8"></path>' +
+        '<path d="M5 10v10h14V10"></path>' +
+        '<path d="M10 20v-6h4v6"></path>' +
+        "</svg>"
+    };
+    return icons[name] || icons.klemmbrett;
   }
 
   /* --- Übersicht: aktive Karten aus den Daten erzeugen ------------------- */
@@ -54,7 +64,7 @@
       a.className = "cl-card";
       a.href = "checkliste.html?id=" + encodeURIComponent(id);
       a.innerHTML =
-        '<span class="cl-card-icon" aria-hidden="true">' + clipboardIcon() + "</span>" +
+        '<span class="cl-card-icon" aria-hidden="true">' + iconMarkup(cl.icon) + "</span>" +
         '<h2 class="cl-card-title"></h2>' +
         '<p class="cl-card-text"></p>' +
         '<span class="cl-card-meta"></span>' +
