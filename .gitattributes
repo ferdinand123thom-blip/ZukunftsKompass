@@ -1,0 +1,4 @@
+# PDFs (und andere Binärdateien) nicht als Text behandeln – keine Zeilenende-Umwandlung
+*.pdf binary
+*.png binary
+*.woff2 binary

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Checkliste von Zukunftskompass – Schritt für Schritt durch eine wichtige Lebenssituation. Punkte abhaken oder als PDF herunterladen. Kostenlos, ohne Anmeldung."
+    >
+    <title>Checkliste | Zukunftskompass</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Zukunftskompass Startseite">
+        <span class="brand-mark" aria-hidden="true">
+          <svg class="compass-needle" viewBox="0 0 42 42" aria-hidden="true">
+            <path class="needle-main" d="M27.5 7.5 22.2 25.4 14.5 34.5 19.8 16.6 27.5 7.5Z"></path>
+            <path class="needle-cut" d="M21.3 18.6 23.2 24.5 19.2 22.4Z"></path>
+          </svg>
+        </span>
+        <span>
+          <strong>Zukunfts<br><span>Kompass</span></strong>
+          <small>Dein Weg. Deine Zukunft.</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Menü öffnen</span>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+        <a href="index.html">Startseite</a>
+        <a href="index.html#themen">Themen</a>
+        <a class="active" href="checklisten.html">Quiz &amp; Checklisten</a>
+        <a href="index.html#wissen">Wissen</a>
+        <a href="index.html#ueber-uns">Über uns</a>
+      </nav>
+
+      <div class="header-actions">
+        <span class="action-with-badge"><button class="icon-button" type="button" aria-label="Suche öffnen">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m16.5 16.5 4 4"></path>
+          </svg>
+        </button><span class="coming-soon-badge coming-soon-badge--float">Coming soon</span></span>
+        <span class="action-with-badge"><a class="profile-button" href="index.html#quiz">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 21a8 8 0 0 0-16 0"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          ZuKo AI
+        </a><span class="coming-soon-badge coming-soon-badge--float">Coming soon</span></span>
+      </div>
+    </header>
+
+    <main class="checklist-page">
+      <a class="back-link" href="checklisten.html">← Alle Checklisten</a>
+
+      <!-- Klemmbrett: Brett + Klammer + Papier; Inhalt füllt checkliste.js -->
+      <div class="clipboard">
+        <span class="clipboard-clip" aria-hidden="true"><span class="clipboard-ring"></span></span>
+        <div class="clipboard-paper">
+          <div id="cl-content"></div>
+        </div>
+      </div>
+
+      <div class="checklist-actions">
+        <a id="cl-pdf" class="primary-button" href="assets/downloads/checkliste-erste-eigene-wohnung.pdf" download>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path>
+          </svg>
+          Als PDF herunterladen
+        </a>
+        <a class="secondary-button" href="quiz.html">Stattdessen Quiz machen</a>
+      </div>
+
+      <p class="checklist-disclaimer">
+        Hinweis: Diese Checkliste gibt dir Orientierung mit den wichtigsten Schritten.
+        Sie ersetzt keine individuelle Beratung – je nach persönlicher Situation können
+        weitere Punkte wichtig sein.
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <strong>Zukunfts<span>Kompass</span></strong>
+          <p>Verständliche Orientierung für Geld, Wohnen, Ausbildung, Beruf, Versicherungen und Verträge – kostenlos und unabhängig erklärt.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer-Navigation">
+          <a href="kontakt.html">Kontakt</a>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Zukunftskompass</p>
+        <p>Ein Bildungsangebot mit fachlicher Unterstützung der Deutsche Finanz-Service GmbH.</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/checklisten-data.js"></script>
+    <script src="assets/js/checkliste.js"></script>
+  </body>
+</html>

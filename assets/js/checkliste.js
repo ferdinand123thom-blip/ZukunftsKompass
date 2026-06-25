@@ -1,0 +1,172 @@
+/* =============================================================================
+   checkliste.js – Logik für die Checklisten
+   -----------------------------------------------------------------------------
+   Wird auf BEIDEN Seiten eingebunden und erkennt anhand eines Mount-Elements,
+   was zu tun ist:
+     - #cl-overview  -> Übersichtsseite: Karten aus den Daten erzeugen
+     - #cl-content   -> Einzelseite: gewählte Checkliste als Klemmbrett aufbauen
+
+   Die Inhalte stehen in checklisten-data.js (Objekt CHECKLISTEN).
+
+   Datenschutz: Es wird NICHTS gespeichert. Das Abhaken ist nur eine Markierung
+   während des Besuchs und ist nach dem Neuladen wieder leer (kein localStorage).
+   ============================================================================= */
+
+(function () {
+  "use strict";
+
+  if (typeof CHECKLISTEN === "undefined") {
+    return;
+  }
+
+  const overview = document.getElementById("cl-overview");
+  if (overview) {
+    renderOverview(overview);
+  }
+
+  const content = document.getElementById("cl-content");
+  if (content) {
+    renderSingle(content);
+  }
+
+  /* --- kleines Klemmbrett-Icon für die Übersichtskarten ------------------- */
+  function clipboardIcon() {
+    return (
+      '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+      '<rect x="5" y="4" width="14" height="17" rx="2"></rect>' +
+      '<path d="M9 4a3 3 0 0 1 6 0"></path>' +
+      '<path d="M9 11h6"></path><path d="M9 15h6"></path>' +
+      "</svg>"
+    );
+  }
+
+  /* --- Übersicht: aktive Karten aus den Daten erzeugen ------------------- */
+  function renderOverview(grid) {
+    const frag = document.createDocumentFragment();
+
+    Object.keys(CHECKLISTEN).forEach(function (id) {
+      const cl = CHECKLISTEN[id];
+      const anzahl = cl.phasen.reduce(function (n, p) {
+        return n + p.aufgaben.length;
+      }, 0);
+
+      const a = document.createElement("a");
+      a.className = "cl-card";
+      a.href = "checkliste.html?id=" + encodeURIComponent(id);
+      a.innerHTML =
+        '<span class="cl-card-icon" aria-hidden="true">' + clipboardIcon() + "</span>" +
+        '<h2 class="cl-card-title"></h2>' +
+        '<p class="cl-card-text"></p>' +
+        '<span class="cl-card-meta"></span>' +
+        '<span class="cl-card-cta">Checkliste öffnen <span aria-hidden="true">→</span></span>';
+      a.querySelector(".cl-card-title").textContent = cl.titel;
+      a.querySelector(".cl-card-text").textContent = cl.intro;
+      a.querySelector(".cl-card-meta").textContent =
+        cl.phasen.length + " Phasen · " + anzahl + " Schritte";
+
+      frag.appendChild(a);
+    });
+
+    // aktive Karten vor den statischen "Bald verfügbar"-Karten einfügen
+    grid.insertBefore(frag, grid.firstChild);
+  }
+
+  /* --- Einzelseite: Checkliste auf dem "Blatt" aufbauen ------------------ */
+  function renderSingle(mount) {
+    const params = new URLSearchParams(window.location.search);
+    let id = params.get("id");
+    if (!id || !CHECKLISTEN[id]) {
+      id = Object.keys(CHECKLISTEN)[0]; // Fallback: erste Checkliste
+    }
+    const cl = CHECKLISTEN[id];
+
+    // SEO: Titel und Beschreibung aus den Daten setzen
+    document.title = cl.titel + " – Checkliste | Zukunftskompass";
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc) {
+      desc.setAttribute("content", "Checkliste „" + cl.titel + "“: " + cl.intro);
+    }
+
+    // PDF-Download-Button mit dem passenden Pfad versehen
+    const pdf = document.getElementById("cl-pdf");
+    if (pdf && cl.pdf) {
+      pdf.href = cl.pdf;
+    }
+
+    // Titel + Einleitung
+    const h1 = document.createElement("h1");
+    h1.className = "cl-titel";
+    h1.textContent = cl.titel;
+    mount.appendChild(h1);
+
+    const intro = document.createElement("p");
+    intro.className = "cl-intro";
+    intro.textContent = cl.intro;
+    mount.appendChild(intro);
+
+    // Phasen + Aufgaben
+    let nr = 0;
+    cl.phasen.forEach(function (phase) {
+      const section = document.createElement("section");
+      section.className = "cl-phase";
+
+      const h2 = document.createElement("h2");
+      h2.className = "cl-phase-titel";
+      h2.textContent = phase.name;
+      section.appendChild(h2);
+
+      const ul = document.createElement("ul");
+      ul.className = "cl-tasks";
+
+      phase.aufgaben.forEach(function (aufgabe) {
+        nr++;
+        const textId = "cl-task-text-" + nr;
+
+        const li = document.createElement("li");
+        li.className = "cl-task";
+
+        // Abhak-Kästchen (Button mit role=checkbox, per Tastatur bedienbar)
+        const box = document.createElement("button");
+        box.type = "button";
+        box.className = "cl-check";
+        box.setAttribute("role", "checkbox");
+        box.setAttribute("aria-checked", "false");
+        box.setAttribute("aria-labelledby", textId);
+        box.innerHTML =
+          '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17.5 19 6.5"></path></svg>';
+        box.addEventListener("click", function () {
+          const checked = box.getAttribute("aria-checked") === "true";
+          box.setAttribute("aria-checked", checked ? "false" : "true");
+          li.classList.toggle("is-done", !checked);
+        });
+
+        const body = document.createElement("div");
+        body.className = "cl-task-body";
+
+        const text = document.createElement("span");
+        text.className = "cl-task-text";
+        text.id = textId;
+        text.textContent = aufgabe.text;
+        body.appendChild(text);
+
+        if (aufgabe.link) {
+          const link = document.createElement("a");
+          link.className = "cl-task-link";
+          link.href = aufgabe.link;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.innerHTML = 'Mehr dazu <span aria-hidden="true">↗</span>';
+          link.setAttribute("aria-label", "Mehr dazu: " + aufgabe.text + " (öffnet in neuem Tab)");
+          body.appendChild(link);
+        }
+
+        li.appendChild(box);
+        li.appendChild(body);
+        ul.appendChild(li);
+      });
+
+      section.appendChild(ul);
+      mount.appendChild(section);
+    });
+  }
+})();
