@@ -998,6 +998,34 @@ main {
   margin: 0;
 }
 
+/* Dezente Unternehmens-Logos auf hellen Kacheln (gute Lesbarkeit auf dunklem
+   Grund). Beide gleichwertig: gleiche Kachel-Optik und gleiche Logo-Höhe. */
+.footer-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 14px;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid rgba(137, 183, 226, 0.16);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.footer-logo img {
+  display: block;
+  width: auto;
+  height: 44px;
+}
+
 .menu-toggle {
   display: none;
   width: 44px;
@@ -1164,6 +1192,14 @@ main {
 
   .step-list > div {
     grid-template-columns: 1fr;
+  }
+
+  .footer-logos {
+    flex-direction: column;
+  }
+
+  .footer-logo img {
+    height: 36px;
   }
 }
 
