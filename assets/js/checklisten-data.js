@@ -36,7 +36,7 @@ const CHECKLISTEN = {
   "erste-eigene-wohnung": {
     titel: "Erste eigene Wohnung",
     intro: "Schritt für Schritt zur ersten eigenen Wohnung – damit du von der Budgetplanung bis zum Einzug nichts Wichtiges vergisst.",
-    icon: "haus", // Karten-Icon: "haus" oder "klemmbrett" (Standard, wenn weggelassen)
+    icon: "haus", // Karten-Icon: "haus", "koffer" oder "klemmbrett" (Standard, wenn weggelassen)
     pdf: "assets/downloads/checkliste-erste-eigene-wohnung.pdf",
     phasen: [
       {
@@ -75,6 +75,53 @@ const CHECKLISTEN = {
           { text: "Neue Adresse mitteilen: Bank, Krankenkasse, Arbeitgeber" },
           { text: "Erstausstattung besorgen (Möbel, Küche, Putzmittel)" },
           { text: "Umzug organisieren (Helfer, Kartons, Transporter)" }
+        ]
+      }
+    ]
+  },
+
+  "erster-job": {
+    titel: "Erster Job",
+    intro: "Dein Start ins Berufsleben – von den Unterlagen bis zur ersten Gehaltsabrechnung, Schritt für Schritt.",
+    icon: "koffer",
+    pdf: "assets/downloads/checkliste-erster-job.pdf",
+    phasen: [
+      {
+        name: "Phase 1 – Vor dem ersten Tag: Unterlagen & Formalitäten",
+        aufgaben: [
+          { text: "Steuer-ID (Steuer-Identifikationsnummer) bereithalten" },
+          { text: "Krankenkasse wählen und Mitgliedsbescheinigung anfordern", link: "themen/versicherungen/krankenversicherung.html" },
+          { text: "Sozialversicherungsnummer bereithalten (SV-Ausweis)" },
+          { text: "Gehaltskonto bereithalten: IBAN für die Gehaltszahlung", link: "themen/geld-finanzen/girokonto-eroeffnen.html" },
+          { text: "Weitere Dokumente klären: Personalausweis, ggf. Führungszeugnis" }
+        ]
+      },
+      {
+        name: "Phase 2 – Arbeitsvertrag & deine Rechte",
+        aufgaben: [
+          { text: "Arbeitsvertrag genau prüfen, bevor du unterschreibst (Arbeitszeit, Urlaub, Kündigungsfristen)", link: "themen/beruf-arbeit/ersten-arbeitsvertrag-pruefen.html" },
+          { text: "Probezeit verstehen (oft kürzere Kündigungsfristen)", link: "themen/beruf-arbeit/ersten-arbeitsvertrag-pruefen.html" },
+          { text: "Mindestlohn und faire Bezahlung kennen", link: "themen/beruf-arbeit/mindestlohn-verstehen.html" },
+          { text: "Urlaub & Krankheit: deine Rechte und Pflichten (Krankmeldung)", link: "themen/beruf-arbeit/urlaub-und-krankheit-im-job.html" }
+        ]
+      },
+      {
+        name: "Phase 3 – Gehalt & Abgaben verstehen",
+        aufgaben: [
+          { text: "Brutto und Netto verstehen: Was bleibt übrig?", link: "themen/beruf-arbeit/brutto-vs-netto.html" },
+          { text: "Sozialabgaben verstehen (die fünf Versicherungen)", link: "themen/beruf-arbeit/sozialabgaben-verstehen.html" },
+          { text: "Erste Gehaltsabrechnung prüfen und verstehen", link: "themen/geld-finanzen/gehaltsabrechnung-verstehen.html" }
+        ]
+      },
+      {
+        name: "Phase 4 – Absichern & vorsorgen",
+        aufgaben: [
+          { text: "Private Haftpflichtversicherung prüfen", link: "themen/versicherungen/haftpflichtversicherung.html" },
+          { text: "Berufsunfähigkeitsversicherung prüfen (jung oft günstig)", link: "themen/versicherungen/berufsunfaehigkeitsversicherung.html" },
+          { text: "Vermögenswirksame Leistungen (VL) checken – zahlt dein Arbeitgeber mit?" },
+          { text: "Betriebliche Altersvorsorge prüfen", link: "themen/beruf-arbeit/betriebliche-altersvorsorge.html" },
+          { text: "Ersten Arbeitstag vorbereiten: Treffpunkt, Anfahrt, Unterlagen, Kleidung" },
+          { text: "Am Jahresende: Steuererklärung kann sich lohnen (oft Geld zurück)", link: "themen/geld-finanzen/erste-steuererklaerung-machen.html" }
         ]
       }
     ]

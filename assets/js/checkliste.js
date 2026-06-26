@@ -45,15 +45,22 @@
         '<path d="m3 11 9-8 9 8"></path>' +
         '<path d="M5 10v10h14V10"></path>' +
         '<path d="M10 20v-6h4v6"></path>' +
+        "</svg>",
+      koffer:
+        '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+        '<path d="M10 6V5a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v1"></path>' +
+        '<rect x="4" y="6" width="16" height="13" rx="2"></rect>' +
+        '<path d="M4 12h16"></path>' +
         "</svg>"
     };
     return icons[name] || icons.klemmbrett;
   }
 
   /* --- Übersicht: aktive Karten aus den Daten erzeugen ------------------- */
+  // Die Reihenfolge auf der Seite bestimmt das HTML: Jede aktive Karte ersetzt
+  // ihren Platzhalter <div data-checkliste="ID"> an genau dieser Stelle. Fehlt
+  // ein Platzhalter, wird die Karte hinten angehängt.
   function renderOverview(grid) {
-    const frag = document.createDocumentFragment();
-
     Object.keys(CHECKLISTEN).forEach(function (id) {
       const cl = CHECKLISTEN[id];
       const anzahl = cl.phasen.reduce(function (n, p) {
@@ -74,11 +81,13 @@
       a.querySelector(".cl-card-meta").textContent =
         cl.phasen.length + " Phasen · " + anzahl + " Schritte";
 
-      frag.appendChild(a);
+      const slot = grid.querySelector('[data-checkliste="' + id + '"]');
+      if (slot) {
+        grid.replaceChild(a, slot);
+      } else {
+        grid.appendChild(a);
+      }
     });
-
-    // aktive Karten vor den statischen "Bald verfügbar"-Karten einfügen
-    grid.insertBefore(frag, grid.firstChild);
   }
 
   /* --- Einzelseite: Checkliste auf dem "Blatt" aufbauen ------------------ */
