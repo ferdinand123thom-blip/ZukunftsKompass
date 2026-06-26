@@ -36,7 +36,7 @@ const CHECKLISTEN = {
   "erste-eigene-wohnung": {
     titel: "Erste eigene Wohnung",
     intro: "Schritt für Schritt zur ersten eigenen Wohnung – damit du von der Budgetplanung bis zum Einzug nichts Wichtiges vergisst.",
-    icon: "haus", // Karten-Icon: "haus", "koffer" oder "klemmbrett" (Standard, wenn weggelassen)
+    icon: "haus", // Karten-Icon: "haus", "koffer", "ausweis" oder "klemmbrett" (Standard, wenn weggelassen)
     pdf: "assets/downloads/checkliste-erste-eigene-wohnung.pdf",
     phasen: [
       {
@@ -122,6 +122,53 @@ const CHECKLISTEN = {
           { text: "Betriebliche Altersvorsorge prüfen", link: "themen/beruf-arbeit/betriebliche-altersvorsorge.html" },
           { text: "Ersten Arbeitstag vorbereiten: Treffpunkt, Anfahrt, Unterlagen, Kleidung" },
           { text: "Am Jahresende: Steuererklärung kann sich lohnen (oft Geld zurück)", link: "themen/geld-finanzen/erste-steuererklaerung-machen.html" }
+        ]
+      }
+    ]
+  },
+
+  "ab-18": {
+    titel: "Ab 18",
+    intro: "Volljährig – was sich rechtlich und finanziell ändert und was du jetzt selbst in die Hand nimmst.",
+    icon: "ausweis",
+    pdf: "assets/downloads/checkliste-ab-18.pdf",
+    phasen: [
+      {
+        name: "Phase 1 – Rechtlich erwachsen: was jetzt gilt",
+        aufgaben: [
+          { text: "Volle Geschäftsfähigkeit: du schließt Verträge jetzt selbst ab", link: "themen/vertraege-rechtliches/vertraege-kuendigen-und-laufzeiten-verstehen.html" },
+          { text: "Volle Haftung: für eigene Schäden stehst du jetzt selbst gerade" },
+          { text: "Personalausweis prüfen: gültig und griffbereit" },
+          { text: "Wahlrecht nutzen: ab 18 darfst du den Bundestag mitwählen" }
+        ]
+      },
+      {
+        name: "Phase 2 – Geld & Konto in eigener Hand",
+        aufgaben: [
+          { text: "Eigenes Girokonto in deinem Namen (volle Kontohoheit)", link: "themen/geld-finanzen/girokonto-eroeffnen.html" },
+          { text: "Überblick über Einnahmen & Ausgaben aufbauen", link: "themen/geld-finanzen/budget-erstellen.html" },
+          { text: "Notgroschen anlegen", link: "themen/geld-finanzen/notgroschen-aufbauen.html" },
+          { text: "SCHUFA & Bonität: ab jetzt zählt dein Zahlungsverhalten", link: "themen/geld-finanzen/schufa-verstehen.html" },
+          { text: "Kindergeld läuft bei Ausbildung/Studium weiter (bis 25) – ggf. aufs eigene Konto" }
+        ]
+      },
+      {
+        name: "Phase 3 – Verträge bewusst abschließen",
+        aufgaben: [
+          { text: "Handyvertrag & Co.: Laufzeiten und Kosten verstehen", link: "themen/vertraege-rechtliches/handyvertraege-verstehen.html" },
+          { text: "Abofallen erkennen und vermeiden", link: "themen/vertraege-rechtliches/abofallen-erkennen.html" },
+          { text: "Widerrufsrecht kennen (14 Tage bei Online-Käufen)", link: "themen/vertraege-rechtliches/widerrufsrecht-kennen.html" },
+          { text: "Schuldenfalle vermeiden: nicht mehr ausgeben, als du hast", link: "themen/geld-finanzen/schulden-vermeiden.html" }
+        ]
+      },
+      {
+        name: "Phase 4 – Absichern & vorausschauen",
+        aufgaben: [
+          { text: "Versicherungsschutz der Eltern prüfen (Haftpflicht, Hausrat)", link: "themen/versicherungen/haftpflichtversicherung.html" },
+          { text: "Krankenversicherung klären: Familienversicherung gilt bis 25 (Schule/Studium)", link: "themen/versicherungen/krankenversicherung.html" },
+          { text: "Eigene Daten schützen: bewusst mit persönlichen Daten umgehen", link: "themen/vertraege-rechtliches/datenschutz-und-persoenliche-daten-schuetzen.html" },
+          { text: "Steuer-ID kennen; bei eigenem Einkommen lohnt sich oft eine Steuererklärung", link: "themen/geld-finanzen/erste-steuererklaerung-machen.html" },
+          { text: "Führerschein: ab 18 darfst du unbegleitet fahren" }
         ]
       }
     ]

@@ -51,6 +51,13 @@
         '<path d="M10 6V5a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v1"></path>' +
         '<rect x="4" y="6" width="16" height="13" rx="2"></rect>' +
         '<path d="M4 12h16"></path>' +
+        "</svg>",
+      ausweis:
+        '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+        '<rect x="3" y="5" width="18" height="14" rx="2"></rect>' +
+        '<circle cx="8.5" cy="11" r="2"></circle>' +
+        '<path d="M13 10h5"></path><path d="M13 14h5"></path>' +
+        '<path d="M5.5 16a3 3 0 0 1 6 0"></path>' +
         "</svg>"
     };
     return icons[name] || icons.klemmbrett;
