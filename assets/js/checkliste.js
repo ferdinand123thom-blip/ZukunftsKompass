@@ -62,6 +62,11 @@
       werkzeug:
         '<svg viewBox="0 0 24 24" aria-hidden="true">' +
         '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"></path>' +
+        "</svg>",
+      studium:
+        '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+        '<path d="m3 8 9-4 9 4-9 4-9-4Z"></path>' +
+        '<path d="M7 10.5v4.2c0 1.2 2.2 2.3 5 2.3s5-1.1 5-2.3v-4.2"></path>' +
         "</svg>"
     };
     return icons[name] || icons.klemmbrett;

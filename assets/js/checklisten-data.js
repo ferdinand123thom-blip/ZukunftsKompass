@@ -37,7 +37,7 @@ const CHECKLISTEN = {
   "erste-eigene-wohnung": {
     titel: "Erste eigene Wohnung",
     intro: "Schritt für Schritt zur ersten eigenen Wohnung – damit du von der Budgetplanung bis zum Einzug nichts Wichtiges vergisst.",
-    icon: "haus", // Karten-Icon: "haus", "koffer", "ausweis", "werkzeug" oder "klemmbrett" (Standard, wenn weggelassen)
+    icon: "haus", // Karten-Icon: "haus", "koffer", "ausweis", "werkzeug", "studium" oder "klemmbrett" (Standard, wenn weggelassen)
     pdf: "assets/downloads/checkliste-erste-eigene-wohnung.pdf",
     phasen: [
       {
@@ -218,6 +218,54 @@ const CHECKLISTEN = {
           { text: "Private Haftpflichtversicherung prüfen (Schutz über die Eltern endet oft)", link: "themen/versicherungen/haftpflichtversicherung.html" },
           { text: "Berufsunfähigkeitsversicherung prüfen (jung oft günstig)", link: "themen/versicherungen/berufsunfaehigkeitsversicherung.html" },
           { text: "Ersten Arbeitstag vorbereiten: Anfahrt, Unterlagen, Kleidung" }
+        ]
+      }
+    ]
+  },
+
+  "start-ins-studium": {
+    titel: "Start ins Studium",
+    intro: "Von der Einschreibung bis zur ersten Vorlesung – damit du gut vorbereitet ins Studium startest.",
+    kurz: "Einschreibung, BAföG, Krankenversicherung und Wohnen – gut vorbereitet ins Studium starten.",
+    icon: "studium",
+    pdf: "assets/downloads/checkliste-start-ins-studium.pdf",
+    phasen: [
+      {
+        name: "Phase 1 – Zulassung & Einschreibung",
+        aufgaben: [
+          { text: "Zulassungsbescheid prüfen: Fristen und benötigte Unterlagen" },
+          { text: "Immatrikulation (Einschreibung) fristgerecht einreichen" },
+          { text: "Unterlagen bereitlegen: beglaubigtes Zeugnis, Ausweis, Passfotos" },
+          { text: "Krankenversicherung klären und nachweisen (Voraussetzung für die Einschreibung; ab 25 studentische KV)", link: "themen/versicherungen/krankenversicherung.html" },
+          { text: "Semesterbeitrag zahlen (Studierendenausweis & Semesterticket)" }
+        ]
+      },
+      {
+        name: "Phase 2 – Studium finanzieren",
+        aufgaben: [
+          { text: "Studienkosten realistisch kalkulieren (Miete, Material, Leben)", link: "themen/ausbildung-studium/studienkosten-kalkulieren.html" },
+          { text: "BAföG früh beantragen – am besten schon mit dem Zulassungsbescheid", link: "themen/ausbildung-studium/bafoeg-verstehen.html" },
+          { text: "Stipendien prüfen (es gibt mehr, als man denkt)" },
+          { text: "Studienkredit als Option kennen", link: "themen/ausbildung-studium/studienkredite-verstehen.html" },
+          { text: "Nebenjob / Werkstudentenstelle überlegen", link: "themen/ausbildung-studium/nebenjob-waehrend-ausbildung-oder-studium.html" },
+          { text: "Girokonto für Studierende einrichten", link: "themen/geld-finanzen/girokonto-eroeffnen.html" }
+        ]
+      },
+      {
+        name: "Phase 3 – Wohnen & Formalitäten",
+        aufgaben: [
+          { text: "Wohnform wählen und früh suchen: Wohnheim, WG oder eigene Wohnung", link: "themen/wohnen/erste-wohnung-finden.html" },
+          { text: "Beim Bürgeramt ummelden (neuer Wohnsitz, Frist beachten)" },
+          { text: "Rundfunkbeitrag klären – mit BAföG ggf. Befreiung möglich", link: "themen/wohnen/rundfunkbeitrag-verstehen.html" }
+        ]
+      },
+      {
+        name: "Phase 4 – Absichern & ankommen",
+        aufgaben: [
+          { text: "Private Haftpflichtversicherung prüfen (Schutz über die Eltern endet oft)", link: "themen/versicherungen/haftpflichtversicherung.html" },
+          { text: "Hausratversicherung prüfen (bei eigener Wohnung)", link: "themen/versicherungen/hausratversicherung.html" },
+          { text: "Auslandssemester geplant? Auslandskrankenversicherung einplanen", link: "themen/versicherungen/auslandskrankenversicherung.html" },
+          { text: "Uni-Account aktivieren, Stundenplan bauen, O-Woche nutzen" }
         ]
       }
     ]
