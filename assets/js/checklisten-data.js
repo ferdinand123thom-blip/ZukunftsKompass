@@ -11,7 +11,8 @@
 
      "erster-job": {
        titel: "Erster Job",                       // Überschrift auf dem Blatt
-       intro: "Kurzer Einleitungssatz …",         // ein Satz unter dem Titel
+       intro: "Kurzer Einleitungssatz …",         // ein Satz unter dem Titel (auf dem Blatt)
+       kurz:  "Optionaler Kartentext …",          // optional: Text auf der Übersichtskarte (sonst wird intro genutzt)
        pdf:   "assets/downloads/DATEINAME.pdf",    // Pfad zur PDF (relativ zum Stammordner)
        phasen: [
          {
@@ -36,7 +37,7 @@ const CHECKLISTEN = {
   "erste-eigene-wohnung": {
     titel: "Erste eigene Wohnung",
     intro: "Schritt für Schritt zur ersten eigenen Wohnung – damit du von der Budgetplanung bis zum Einzug nichts Wichtiges vergisst.",
-    icon: "haus", // Karten-Icon: "haus", "koffer", "ausweis" oder "klemmbrett" (Standard, wenn weggelassen)
+    icon: "haus", // Karten-Icon: "haus", "koffer", "ausweis", "werkzeug" oder "klemmbrett" (Standard, wenn weggelassen)
     pdf: "assets/downloads/checkliste-erste-eigene-wohnung.pdf",
     phasen: [
       {
@@ -169,6 +170,54 @@ const CHECKLISTEN = {
           { text: "Eigene Daten schützen: bewusst mit persönlichen Daten umgehen", link: "themen/vertraege-rechtliches/datenschutz-und-persoenliche-daten-schuetzen.html" },
           { text: "Steuer-ID kennen; bei eigenem Einkommen lohnt sich oft eine Steuererklärung", link: "themen/geld-finanzen/erste-steuererklaerung-machen.html" },
           { text: "Führerschein: ab 18 darfst du unbegleitet fahren" }
+        ]
+      }
+    ]
+  },
+
+  "start-in-die-ausbildung": {
+    titel: "Start in die Ausbildung",
+    intro: "Vom Ausbildungsvertrag über die Berufsschule bis zur ersten Vergütung – startklar in deine Ausbildung.",
+    kurz: "Ausbildungsvertrag, Berufsschule, erste Vergütung – alles Wichtige für deinen Start in die Ausbildung.",
+    icon: "werkzeug",
+    pdf: "assets/downloads/checkliste-start-in-die-ausbildung.pdf",
+    phasen: [
+      {
+        name: "Phase 1 – Vor dem Start: Unterlagen & Formalitäten",
+        aufgaben: [
+          { text: "Steuer-ID, Personalausweis & ggf. Führungszeugnis bereithalten" },
+          { text: "Krankenkasse wählen und Mitgliedsbescheinigung anfordern", link: "themen/versicherungen/krankenversicherung.html" },
+          { text: "Sozialversicherungsnummer bereithalten (SV-Ausweis)" },
+          { text: "Gehaltskonto bereithalten: IBAN für die Vergütung", link: "themen/geld-finanzen/girokonto-eroeffnen.html" },
+          { text: "Unter 18: ärztliche Erstuntersuchung (Jugendarbeitsschutz)" }
+        ]
+      },
+      {
+        name: "Phase 2 – Ausbildungsvertrag & Berufsschule",
+        aufgaben: [
+          { text: "Ausbildungsvertrag prüfen (Dauer, Probezeit, Vergütung, Urlaub)", link: "themen/beruf-arbeit/ersten-arbeitsvertrag-pruefen.html" },
+          { text: "Ausbildungsvertrag bei der Kammer eintragen lassen (IHK/HWK – meist über den Betrieb)" },
+          { text: "Berufsschule: Unterrichtstage und Anmeldung klären (meist über den Betrieb)" },
+          { text: "Berichtsheft (Ausbildungsnachweis) von Anfang an führen – Pflicht" }
+        ]
+      },
+      {
+        name: "Phase 3 – Geld & Rechte verstehen",
+        aufgaben: [
+          { text: "Ausbildungsvergütung verstehen (steigt jährlich)", link: "themen/ausbildung-studium/ausbildungsverguetung-verstehen.html" },
+          { text: "Brutto und Netto verstehen: Was bleibt übrig?", link: "themen/beruf-arbeit/brutto-vs-netto.html" },
+          { text: "Sozialabgaben verstehen (die fünf Versicherungen)", link: "themen/beruf-arbeit/sozialabgaben-verstehen.html" },
+          { text: "Urlaub & Krankheit: deine Rechte und Pflichten (Krankmeldung)", link: "themen/beruf-arbeit/urlaub-und-krankheit-im-job.html" },
+          { text: "Jugendarbeitsschutz kennen (unter 18: Arbeitszeit, Urlaub, Pausen)" }
+        ]
+      },
+      {
+        name: "Phase 4 – Absichern & unterstützen lassen",
+        aufgaben: [
+          { text: "Berufsausbildungsbeihilfe (BAB) prüfen – Hilfe von der Arbeitsagentur" },
+          { text: "Private Haftpflichtversicherung prüfen (Schutz über die Eltern endet oft)", link: "themen/versicherungen/haftpflichtversicherung.html" },
+          { text: "Berufsunfähigkeitsversicherung prüfen (jung oft günstig)", link: "themen/versicherungen/berufsunfaehigkeitsversicherung.html" },
+          { text: "Ersten Arbeitstag vorbereiten: Anfahrt, Unterlagen, Kleidung" }
         ]
       }
     ]

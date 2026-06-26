@@ -58,6 +58,10 @@
         '<circle cx="8.5" cy="11" r="2"></circle>' +
         '<path d="M13 10h5"></path><path d="M13 14h5"></path>' +
         '<path d="M5.5 16a3 3 0 0 1 6 0"></path>' +
+        "</svg>",
+      werkzeug:
+        '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+        '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"></path>' +
         "</svg>"
     };
     return icons[name] || icons.klemmbrett;
@@ -84,7 +88,7 @@
         '<span class="cl-card-meta"></span>' +
         '<span class="cl-card-cta">Checkliste öffnen <span aria-hidden="true">→</span></span>';
       a.querySelector(".cl-card-title").textContent = cl.titel;
-      a.querySelector(".cl-card-text").textContent = cl.intro;
+      a.querySelector(".cl-card-text").textContent = cl.kurz || cl.intro;
       a.querySelector(".cl-card-meta").textContent =
         cl.phasen.length + " Phasen · " + anzahl + " Schritte";
 
