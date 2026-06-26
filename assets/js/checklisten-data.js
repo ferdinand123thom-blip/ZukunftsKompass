@@ -52,6 +52,7 @@ const CHECKLISTEN = {
         name: "Phase 2 – Wohnung & Mietvertrag",
         aufgaben: [
           { text: "Wohnung besichtigen und genau prüfen", link: "themen/wohnen/erste-wohnung-finden.html" },
+          { text: "Bewerbungsunterlagen vorbereiten: SCHUFA-Auskunft, Einkommensnachweis, ggf. Bürgschaft" },
           { text: "Mietvertrag in Ruhe prüfen, bevor du unterschreibst", link: "themen/wohnen/mietvertrag-verstehen.html" },
           { text: "Kaution klären (Höhe, Fälligkeit, Ratenzahlung?)", link: "themen/wohnen/mietvertrag-verstehen.html" },
           { text: "Nebenkosten verstehen: Was ist enthalten?", link: "themen/wohnen/nebenkosten-verstehen.html" },
@@ -206,6 +207,7 @@ const CHECKLISTEN = {
         aufgaben: [
           { text: "Ausbildungsvergütung verstehen (steigt jährlich)", link: "themen/ausbildung-studium/ausbildungsverguetung-verstehen.html" },
           { text: "Brutto und Netto verstehen: Was bleibt übrig?", link: "themen/beruf-arbeit/brutto-vs-netto.html" },
+          { text: "Erste Gehaltsabrechnung prüfen und verstehen", link: "themen/geld-finanzen/gehaltsabrechnung-verstehen.html" },
           { text: "Sozialabgaben verstehen (die fünf Versicherungen)", link: "themen/beruf-arbeit/sozialabgaben-verstehen.html" },
           { text: "Urlaub & Krankheit: deine Rechte und Pflichten (Krankmeldung)", link: "themen/beruf-arbeit/urlaub-und-krankheit-im-job.html" },
           { text: "Jugendarbeitsschutz kennen (unter 18: Arbeitszeit, Urlaub, Pausen)" }
@@ -215,6 +217,7 @@ const CHECKLISTEN = {
         name: "Phase 4 – Absichern & unterstützen lassen",
         aufgaben: [
           { text: "Berufsausbildungsbeihilfe (BAB) prüfen – Hilfe von der Arbeitsagentur" },
+          { text: "Vermögenswirksame Leistungen (VL) checken – zahlt dein Arbeitgeber mit?" },
           { text: "Private Haftpflichtversicherung prüfen (Schutz über die Eltern endet oft)", link: "themen/versicherungen/haftpflichtversicherung.html" },
           { text: "Berufsunfähigkeitsversicherung prüfen (jung oft günstig)", link: "themen/versicherungen/berufsunfaehigkeitsversicherung.html" },
           { text: "Ersten Arbeitstag vorbereiten: Anfahrt, Unterlagen, Kleidung" }
@@ -245,6 +248,7 @@ const CHECKLISTEN = {
         aufgaben: [
           { text: "Studienkosten realistisch kalkulieren (Miete, Material, Leben)", link: "themen/ausbildung-studium/studienkosten-kalkulieren.html" },
           { text: "BAföG früh beantragen – am besten schon mit dem Zulassungsbescheid", link: "themen/ausbildung-studium/bafoeg-verstehen.html" },
+          { text: "Kindergeld läuft im Studium weiter (bis 25)" },
           { text: "Stipendien prüfen (es gibt mehr, als man denkt)" },
           { text: "Studienkredit als Option kennen", link: "themen/ausbildung-studium/studienkredite-verstehen.html" },
           { text: "Nebenjob / Werkstudentenstelle überlegen", link: "themen/ausbildung-studium/nebenjob-waehrend-ausbildung-oder-studium.html" },
